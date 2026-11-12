@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="signup_wrapper">
+        <div class="back">
+            <a href="">← Back to home</a>
+        </div>
+
+        <div class="brand-wrapper">
+            <img src="/Hangout Logo.jpg" alt="Hangout Logo">
+            <h1>Hangout</h1>
+        </div>
+
+        <section class="signup_card" id="signupSection">
+            <h2>Create an Account</h2>
+            <p class="subtitle">
+                Join thousands of Nigerians on Hangout
+            </p>
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="username">Full Name</label>
+                    <input type="text" name="username" id="username" placeholder="Judith Uloma">
+                    <h5 id="nameHint">Name must be more than 3 characters.</h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="chioma@gmail.com">
+                    <h5 id="emailHint">Enter a valid email address.</h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="+234 817 977 5549">
+                    <h5 id="phoneHint">Enter a valid Nigerian mobile number.</h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Home Address</label>
+                    <input type="text" name="address" id="address" placeholder="2, Chevron Drive, Lekki">
+                    <h5 id="addressHint">Enter an address of at least 8 characters, and a House number.</h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter a password">
+                    <button type="button" class="switch-password" id="toggleSignupPassword">Show</button>
+                    <h5 id="passwordHint">Minimum 6 characters, one uppercase letter and one number.</h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Retype your password">
+                    <h5 id="confirmHint"> Re-enter your password. </h5>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" name="terms" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> </label>
+                </div>
+                <h5 id="termsHint" class="terms-error"></h5>
+                <button type="submit" id="createAccountBtn" > Create Account </button>
+                <h5 id="accountError">Please complete the form before you proceed to Submit</h5>
+            </form>
+
+            <div class="divider">
+                <p>or</p>
+            </div>
+
+            <p class="bottom-text">
+                Already have an account?
+                <a href="#" id="showLogin">Sign in</a>
+            </p>
+        </section>
+
+        <section class="submission_loader hidden" id="loadingSection">
+            <div class="spinner"></div>
+            <h2>Creating Account</h2>
+            <p>Please wait while we set up your account...</p>
+        </section>
+
+        <section class="account_success hidden" id="successSection">
+            <div class="success-icon">✓</div>
+            <h2>Account Successfully Created!</h2>
+            <p> Your Hangout account has been created successfully. <br> You can now proceed to sign in. </p>
+            <button type="button" id="successLoginBtn">Proceed to Sign In</button>
+        </section>
+
+        <section class="signin_card hidden" id="signinSection">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign in to your account to continue.</p>
+            <form id="signinForm" novalidate>
+                <div class="form-group">
+                    <label for="loginEmail">Username / Email Address</label>
+                    <input type="text" name="loginEmail" id="loginEmail" placeholder="you@example.com">
+                    <h5 id="loginEmailHint"></h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-container">
+                        <input type="password" name="loginPassword" id="loginPassword" placeholder="Enter your password">
+                        <button type="button" class="switch-password" id="toggleLoginPassword">Show</button>
+                    </div>
+                    <h5 id="loginPasswordHint"></h5>
+                </div>
+                <button type="submit">Continue to Login</button>
+                <p id="loginMessage" class="login-message"></p>
+            </form>
+
+            <div class="divider">
+                <p>or</p>
+            </div>
+            <p class="bottom-text">Don't have an account yet?<a href="#" id="showSignup">Create a new account</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
