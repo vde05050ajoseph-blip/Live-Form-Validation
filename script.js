@@ -189,7 +189,6 @@ signupForm.addEventListener('submit', (e) => {
     const phonePass = phonePattern.test(phone.value)
     const addressPass = addressPattern.test(address.value)
     const passwordPass = passwordPattern.test(password.value)
-
     const accountError = document.getElementById("accountError");
 
     if (namePass && emailPass && phonePass && addressPass && passwordPass) {
@@ -229,20 +228,21 @@ signupForm.addEventListener('submit', (e) => {
         completeError(password, passwordHint, "Field is empty, Set a secure Password", passwordPattern);
 
 
-        if (confirmPassword.value === password.value) {
-            confirmHint.textContent = "Yes!👍 This Looks Perfect ✓";
-            confirmPassword.classList.add("valid");
-            confirmHint.classList.add("success");}
-
-       else if (confirmPassword.value.trim() === "") {
+        
+        if (confirmPassword.value.trim() === "") {
             confirmHint.textContent = "Field is empty, Set a Matching Password";
             confirmPassword.classList.add("invalid");
             confirmHint.classList.add("error");
-        }else {
-                        confirmHint.textContent = "Password Mismatch";
+        }
+        else if (confirmPassword.value !== password.value) {
+            confirmHint.textContent = "Password Mismatch";
             confirmPassword.classList.add("invalid");
-            confirmHint.classList.add("error");}
-        
+            confirmHint.classList.add("error");
+        } else {
+            confirmHint.textContent = "Yes!👍 This Looks Perfect ✓";
+            confirmPassword.classList.add("valid");
+            confirmHint.classList.add("success");
+        }
 
 
 
