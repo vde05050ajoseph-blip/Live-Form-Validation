@@ -368,8 +368,7 @@ button:active {
 .switch-password {
     position: absolute;
     right: 485px;
-    top: 117.5%;
-    transform: translateY(-10%);
+    top: 750px;
     border: none;
     background: transparent;
     color: #B52D52;
