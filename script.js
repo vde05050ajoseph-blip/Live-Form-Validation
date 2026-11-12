@@ -213,10 +213,13 @@ e.preventDefault();
         input.classList.add("valid");
         notification.classList.add("success");
 
-    } else {
+    } else if (input.value.trim() === "") {
         notification.textContent = report;
         input.classList.add("invalid");
         notification.classList.add("error");
+    } else{
+             input.classList.add("invalid");
+        notification.classList.add("error");   
     }
       }
     
@@ -227,9 +230,12 @@ completeError(address, addressHint, "Field is empty, your home address is requir
 completeError(password, passwordHint, "Field is empty, Set a secure Password", passwordPattern );
 
 
-
-                if(confirmPassword.value !== password.value){
+      if(confirmPassword.value.trim() === ""){
                            confirmHint.textContent = "Field is empty, Set a Matching Password";
+        confirmPassword.classList.add("invalid");
+        confirmHint.classList.add("error");}
+               else if(confirmPassword.value !== password.value){
+                           confirmHint.textContent = "Password Mismatch";
         confirmPassword.classList.add("invalid");
         confirmHint.classList.add("error");
                 } else {
